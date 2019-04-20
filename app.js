@@ -18,7 +18,6 @@ var authRouter = require('./routes/auth');
 
 var app = express();
 
-// app.use(logger());
 app.use(logger('dev'));
 app.use(express.json({
     limit: '1mb'
@@ -61,13 +60,7 @@ app.use(helmet.contentSecurityPolicy({
 // https://www.npmjs.com/package/lusca
 app.use(lusca({
     csrf: true,
-    // csp: {
-    //     "policy": {
-    //         "default-src": "self"
-    //     }
-    // },
     xframe: 'SAMEORIGIN',
-    // p3p: 'ABCDEF',
     hsts: {
         maxAge: 31536000,
         includeSubDomains: true,
