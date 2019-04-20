@@ -1,0 +1,23 @@
+{
+  "name": "server",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "NODE_ENV=development node ./bin/server",
+    "prd": "NODE_ENV=production node ./bin/server",
+    "forever": "NODE_ENV=production forever start ./bin/server"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "config": "^3.1.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "express-session": "^1.16.1",
+    "express-validator": "^5.3.1",
+    "helmet": "^3.16.0",
+    "lusca": "^1.6.1",
+    "memorystore": "^1.6.1",
+    "morgan": "~1.9.0"
+  }
+}

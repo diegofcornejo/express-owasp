@@ -1,0 +1,13 @@
+{
+    "APP": {
+        "name": "Server",
+        "port": 4000
+    },
+    "DB": {
+        "host": "db.dev.pentcloud.com",
+        "port": 3306,
+        "name": "dbname",
+        "user": "dbuser",
+        "password": "dbpass"
+    }
+}
