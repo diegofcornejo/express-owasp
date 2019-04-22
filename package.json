@@ -8,6 +8,7 @@
     "forever": "NODE_ENV=production forever start ./bin/server"
   },
   "dependencies": {
+    "bcrypt": "^3.0.6",
     "compression": "^1.7.4",
     "config": "^3.1.0",
     "cookie-parser": "~1.4.3",

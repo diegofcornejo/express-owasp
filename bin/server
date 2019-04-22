@@ -100,6 +100,6 @@ if (cluster.isMaster) {
       'pipe ' + addr :
       'port ' + addr.port + ' - enviroment: ' + env;
     debug('Listening on ' + bind);
-    console.log(`Worker ${process.pid} started`);
+    console.log(`Worker ${process.pid} started on ${bind}`);
   }
 }
