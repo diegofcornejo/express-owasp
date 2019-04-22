@@ -7,10 +7,9 @@ const validator = require('express-validator');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const config = require('config');
 const compression = require('compression');
 const helmet = require('helmet');
-const lusca = require('lusca')
+const lusca = require('lusca');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -84,7 +83,4 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/login', authRouter);
 
-module.exports = {
-    "app": app,
-    "config": config
-};
+module.exports = app;
