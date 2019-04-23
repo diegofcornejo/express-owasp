@@ -13,7 +13,8 @@ const numCPUs = require('os').cpus().length;
 const http = require('http');
 const env = process.env.NODE_ENV;
 
-if (cluster.isMaster) {
+
+if (cluster.isMaster && env == 'production') {
   // Code to run if we're in a worker process
   console.log(`Master ${process.pid} is running`);
   // Create a worker for each CPU
