@@ -18,7 +18,12 @@
     "express-validator": "^5.3.1",
     "helmet": "^3.16.0",
     "lusca": "^1.6.1",
+    "mariadb": "^2.0.3",
     "memorystore": "^1.6.1",
-    "morgan": "~1.9.0"
+    "morgan": "~1.9.0",
+    "mysql2": "^1.6.5",
+    "pg": "^7.10.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^5.7.4"
   }
 }

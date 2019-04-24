@@ -78,9 +78,15 @@ app.use(function (req, res, next) {
     next();
 });
 
+var model = require('./orm/orm')();
+
 // Routes
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/login', authRouter);
 
-module.exports = app;
+
+module.exports = {
+    app:app,
+    model:model
+};

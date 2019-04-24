@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-const app = require('../app');
+const app = require('../app').app;
 const config = require('config');
 const APP = config.get('APP');
 const debug = require('debug')('server:server');

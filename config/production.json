@@ -3,10 +3,11 @@
         "port": 4001
     },
     "DB": {
-        "host": "db.prd.pentcloud.com",
-        "port": 3307,
-        "name": "dbname",
-        "user": "dbuser",
-        "password": "dbpass"
+        "host": "localhost",
+        "port": 3306,
+        "name": "express",
+        "user": "expressdbuser",
+        "password": "pa$$",
+        "dialect": "mariadb"
     }
 }
