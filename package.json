@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "NODE_ENV=development node ./bin/server",
     "prd": "NODE_ENV=production node ./bin/server",
-    "forever": "NODE_ENV=production forever start ./bin/server"
+    "forever": "NODE_ENV=production forever start ./bin/server",
+    "docker-dev": "NODE_ENV=development node ./bin/server"
   },
   "dependencies": {
     "bcrypt": "^3.0.6",
