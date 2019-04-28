@@ -5,7 +5,7 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
-var createHash = async function (password) {
+var createHash = async (password) => {
     try {
         let hash = await bcrypt.hash(password, saltRounds);
         return hash;
@@ -14,7 +14,7 @@ var createHash = async function (password) {
     }
 };
 
-var compareHash = async function (password, hash) {
+var compareHash = async (password, hash) => {
     try {
         let match = await bcrypt.compare(password, hash);
         return match;
@@ -27,7 +27,7 @@ var compareHash = async function (password, hash) {
 /* login */
 router.get('/', async function (req, res, next) {
     var model = require('../app').model;
-    if(model){
+    if (model) {
         model.User.findOne({
             where: {
                 username: req.query.username
@@ -48,7 +48,7 @@ router.get('/', async function (req, res, next) {
                 });
             }
         });
-    }else{
+    } else {
         /*************Simulate Get DB response*******/
         let dbusername = 'diego';
         let dbhash = '$2b$10$4Sh.ut83.kUlSJIJGW94POymbn/ZJDPfo3Bz4V3G/o4dEr8lw.JBq';
