@@ -5,7 +5,6 @@ const session = require('express-session');
 const MemoryStore = require('memorystore')(session);
 const validator = require('express-validator');
 const path = require('path');
-const fs = require('fs');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const compression = require('compression');
@@ -86,10 +85,10 @@ app.use('/users', usersRouter);
 app.use('/login', authRouter);
 
 //ORM
-if (process.argv[2] == '--no-orm') {
-    var model = false
-} else {
-    var model = require('./orm/orm')();
+var noOrm = process.argv.includes('--no-orm');
+var model;
+if (!noOrm) {
+    model = require('./orm/orm')();
 }
 
 module.exports = {
