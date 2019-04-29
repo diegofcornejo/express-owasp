@@ -14,6 +14,7 @@ const lusca = require('lusca');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var authRouter = require('./routes/auth');
+var secrets = require('./config/secrets.js');
 
 var app = express();
 
@@ -32,7 +33,7 @@ app.use(compression());
 // https://www.npmjs.com/package/express-session
 app.set('trust proxy', 1) // trust first proxy
 app.use(session({
-    secret: 'secret', //generate a secure passphrase
+    secret: secrets.session, //generate a secure passphrase
     resave: false,
     saveUninitialized: true,
     cookie: {
