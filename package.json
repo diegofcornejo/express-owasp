@@ -7,7 +7,6 @@
     "dev": "NODE_ENV=development node ./bin/server",
     "prd": "NODE_ENV=production node ./bin/server",
     "forever": "NODE_ENV=production forever start ./bin/server",
-    "docker-dev": "NODE_ENV=development node ./bin/server",
     "snyk-protect": "snyk protect",
     "prepare": "npm run snyk-protect"
   },
