@@ -3,7 +3,7 @@
 const express = require('express');
 const session = require('express-session');
 const MemoryStore = require('memorystore')(session);
-const validator = require('express-validator');
+// const validator = require('express-validator');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
@@ -71,7 +71,7 @@ app.use(lusca({
 }));
 
 //Sanitize all post request (user input)
-app.use(validator());
+// app.use(validator());
 app.use(function (req, res, next) {
     for (var item in req.body) {
         req.sanitize(item).escape();

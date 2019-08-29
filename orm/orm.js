@@ -1,9 +1,9 @@
 module.exports = function () {
 
     const Sequelize = require('sequelize');
-
     const config = require('config');
     const DB = config.get('DB');
+    const bcrypt = require('../tools/bcrypt');
 
     // Connection to database
     const sequelize = new Sequelize(DB.name,
@@ -35,6 +35,7 @@ module.exports = function () {
     });
 
 
+
     // Sync
     var reset = false;
     sequelize
@@ -48,6 +49,16 @@ module.exports = function () {
             if (reset) {
                 // nothing
                 console.log('hi');
+                /********Create default user in DB*********/
+                let hash = await bcrypt.createHash('admin', 10); //generate a hash from plain text
+                var input = {
+                    "username": "admin",
+                    "password": hash
+                }
+                model.User.create(input).then(function (data) {
+                    console.log(data);
+                });
+                /************************************/
             }
         }, function (err) {
             console.log('An error occurred while creating the table:', err);
