@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "localdb": "NODE_ENV=localdb node ./bin/server",
     "dev": "NODE_ENV=development node ./bin/server",
     "prd": "NODE_ENV=production node ./bin/server",
     "forever": "NODE_ENV=production forever start ./bin/server",
@@ -28,7 +29,8 @@
     "pg": "^7.10.0",
     "pg-hstore": "^2.3.2",
     "sequelize": "^5.15.1",
-    "snyk": "^1.221.1"
+    "snyk": "^1.221.1",
+    "sqlite3": "^4.1.0"
   },
   "snyk": true
 }

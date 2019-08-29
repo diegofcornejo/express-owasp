@@ -6,18 +6,22 @@ module.exports = function () {
     const bcrypt = require('../tools/bcrypt');
 
     // Connection to database
-    const sequelize = new Sequelize(DB.name,
-        DB.user, DB.password, {
-            host: DB.host,
-            dialect: DB.dialect,
-            port: DB.port,
-            // pool: {
-            //     max: 5,
-            //     min: 0,
-            //     idle: 5000
-            // },
-            logging: true
-        });
+    if (DB.dialect == 'sqlite') {
+        var sequelize = new Sequelize('sqlite:./express.db');
+    } else {
+        var sequelize = new Sequelize(DB.name,
+            DB.user, DB.password, {
+                host: DB.host,
+                dialect: DB.dialect,
+                port: DB.port,
+                // pool: {
+                //     max: 5,
+                //     min: 0,
+                //     idle: 5000
+                // },
+                logging: true
+            });
+    }
 
     // Models definition
     var model = {};
@@ -37,18 +41,17 @@ module.exports = function () {
 
 
     // Sync
-    var reset = false;
+    var reset = true; /******WARNING this reset your db completely******/
+
     sequelize
         .sync({
             force: reset
         })
-        .then(function (err) {
+        .then(async function (err) {
             err = err;
             console.log('It worked!');
             //DEFAULTS
             if (reset) {
-                // nothing
-                console.log('hi');
                 /********Create default user in DB*********/
                 let hash = await bcrypt.createHash('admin', 10); //generate a hash from plain text
                 var input = {
@@ -56,7 +59,7 @@ module.exports = function () {
                     "password": hash
                 }
                 model.User.create(input).then(function (data) {
-                    console.log(data);
+                    console.log('Admin created');
                 });
                 /************************************/
             }

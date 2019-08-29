@@ -30,13 +30,17 @@ router.get('/', async function (req, res, next) {
         });
     } else {
         /*************Simulate Get DB response*******/
-        let dbusername = 'diego';
-        let dbhash = '$2b$10$4Sh.ut83.kUlSJIJGW94POymbn/ZJDPfo3Bz4V3G/o4dEr8lw.JBq';
-        let passwordMatch = await bcrypt.compareHash(req.query.password, dbhash);
-        if (req.query.username == dbusername && passwordMatch) {
-            res.sendStatus(200);
+        let user = {
+            username : 'admin',
+            password : '$2b$10$UgBV6UiCICjNmSPriOke0elW11h75AGiwlxnLn9Ph87P79fGxEHQq'
+        }
+        let passwordMatch = await bcrypt.compareHash(req.query.password, user.password);
+        if (req.query.username == user.username && passwordMatch) {
+            res.status(200).json(user);
         } else {
-            res.sendStatus(401);
+            res.status(401).json({
+                "message": "Invalid username or password"
+            });
         }
     }
 });
