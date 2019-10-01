@@ -19,7 +19,7 @@
     "express": "~4.16.0",
     "express-session": "^1.16.1",
     "express-validator": "^6.0.0",
-    "helmet": "^3.16.0",
+    "helmet": "^3.21.1",
     "lusca": "^1.6.1",
     "mariadb": "^2.0.3",
     "memorystore": "^1.6.1",
