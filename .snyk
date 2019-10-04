@@ -8,3 +8,8 @@ patch:
         patched: '2019-08-28T13:05:13.176Z'
     - sequelize > lodash:
         patched: '2019-08-28T13:05:13.176Z'
+  SNYK-JS-HTTPSPROXYAGENT-469131:
+    - snyk > proxy-agent > https-proxy-agent:
+        patched: '2019-10-04T07:00:29.038Z'
+    - snyk > proxy-agent > pac-proxy-agent > https-proxy-agent:
+        patched: '2019-10-04T07:00:29.038Z'
