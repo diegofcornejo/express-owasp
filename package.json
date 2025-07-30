@@ -12,24 +12,24 @@
   },
   "dependencies": {
     "bcrypt": "^5.0.0",
-    "compression": "^1.7.4",
+    "compression": "^1.8.1",
     "config": "^3.1.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
-    "express-session": "^1.16.1",
+    "express-session": "^1.18.2",
     "express-validator": "^6.0.0",
     "helmet": "^3.22.0",
     "lusca": "^1.6.1",
     "mariadb": "^2.0.3",
     "memorystore": "^1.6.1",
-    "morgan": "~1.9.0",
+    "morgan": "~1.10.1",
     "mysql2": "^1.6.5",
     "pg": "^7.10.0",
     "pg-hstore": "^2.3.2",
     "sequelize": "^5.15.1",
     "snyk": "^1.221.1",
-    "sqlite3": "^4.1.0"
+    "sqlite3": "^4.2.0"
   },
   "snyk": true
 }
