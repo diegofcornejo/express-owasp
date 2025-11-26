@@ -18,7 +18,7 @@
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "express-session": "^1.16.1",
-    "express-validator": "^6.0.0",
+    "express-validator": "^6.5.0",
     "helmet": "^3.22.0",
     "lusca": "^1.6.1",
     "mariadb": "^2.0.3",
@@ -27,7 +27,7 @@
     "mysql2": "^1.6.5",
     "pg": "^7.10.0",
     "pg-hstore": "^2.3.2",
-    "sequelize": "^5.15.1",
+    "sequelize": "^6.6.5",
     "snyk": "^1.221.1",
     "sqlite3": "^4.1.0"
   },
